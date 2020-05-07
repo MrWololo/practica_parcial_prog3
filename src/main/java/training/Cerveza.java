@@ -1,22 +1,24 @@
-package test;
+package training;
+
+import java.util.UUID;
 
 public abstract class Cerveza {
 
-    private int id;
+    private UUID id;
     private String nombre;
     private float precio;
     private float ABV;
     private String descripcion;
 
-    public Cerveza(int id, String nombre, float precio, float ABV, String descripcion) {
-        this.id = id;
+    public Cerveza(String nombre, float precio, float ABV, String descripcion) {
+        this.id = UUID.randomUUID();
         this.nombre = nombre;
         this.precio = precio;
         this.ABV = ABV;
         this.descripcion = descripcion;
     }
 
-    public int getId() {
+    public UUID getId() {
         return this.id;
     }
 
@@ -38,13 +40,8 @@ public abstract class Cerveza {
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", nombre='" + getNombre() + "'" +
-            ", precio='" + getPrecio() + "'" +
-            ", ABV='" + getABV() + "'" +
-            ", descripcion='" + getDescripcion() + "'" +
-            "}";
+        return "\nCerveza: {" + "'" + "nombre='" + getNombre() + "'" + ", precio='" + getPrecio() + "'" + ", ABV='" + getABV()
+                + "'" + ", descripcion='" + getDescripcion() + "'" + "}";
     }
 
     public abstract float calcularCostoFabricacion();

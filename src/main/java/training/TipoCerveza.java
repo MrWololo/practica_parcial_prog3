@@ -1,4 +1,4 @@
-package test;
+package training;
 
 public abstract class TipoCerveza extends Cerveza {
 
@@ -6,9 +6,9 @@ public abstract class TipoCerveza extends Cerveza {
     private Receta receta;
     private float porcentajeComplejidad;
 
-    protected TipoCerveza(int id, String nombre, float precio, float ABV, String descripcion, boolean gluten,
-            Receta receta, float porcentajeComplejidad) {
-        super(id, nombre, precio, ABV, descripcion);
+    protected TipoCerveza(String nombre, float precio, float ABV, String descripcion, boolean gluten, Receta receta,
+            float porcentajeComplejidad) {
+        super(nombre, precio, ABV, descripcion);
         this.gluten = gluten;
         this.porcentajeComplejidad = porcentajeComplejidad;
         this.receta = receta;
@@ -28,8 +28,9 @@ public abstract class TipoCerveza extends Cerveza {
 
     @Override
     public String toString() {
-        return "{" + " gluten='" + isGluten() + "'" + ", receta='" + getReceta() + "'" + ", porcentajeComplejidad='"
-                + getPorcentajeComplejidad() + "'" + "}";
+        return "TipoCerveza: {" + super.toString() + " gluten='" + isGluten() + "'" + ", receta='" + getReceta() + "'"
+                + ", porcentajeComplejidad='" + getPorcentajeComplejidad() + "'" + "costo fabricacion: "
+                + calcularCostoFabricacion() + "}";
     }
 
     public void fabricarConSinGluten(Receta re, boolean gluten) {

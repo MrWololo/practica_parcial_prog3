@@ -1,6 +1,7 @@
-package test;
+package training;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Fabrica {
 
@@ -55,7 +56,7 @@ public class Fabrica {
 
     }
 
-    public void quitarCerveza(int id) {
+    public void quitarCerveza(UUID id) {
         for (Cerveza cerveza : cervezas) {
             if (cerveza.getId() == id) {
                 cervezas.remove(cerveza);
@@ -65,7 +66,7 @@ public class Fabrica {
 
     @Override
     public String toString() {
-        return "{" + " id='" + getId() + "'" + ", nombre='" + getNombre() + "'" + ", direccion='" + getDireccion() + "'"
+        return "Fabrica: {" + "'" + "nombre='" + getNombre() + "'" + ", direccion='" + getDireccion() + "'"
                 + ", cervezas='" + getCervezas().toString() + "'" + "}";
     }
 

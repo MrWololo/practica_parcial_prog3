@@ -1,22 +1,23 @@
-package test;
+package training;
+
+import java.util.UUID;
 
 public class Ingrediente {
 
-    private int id;
+    private UUID id;
     private String nombre;
     private String descripcion;
     private float cantidad;
     private float PrecioUnidad;
 
-    public Ingrediente(int id, String nombre, String descripcion, float PrecioUnidad) {
-        this.id = id;
+    public Ingrediente(String nombre, String descripcion, float PrecioUnidad) {
+        this.id = UUID.randomUUID();
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.PrecioUnidad = PrecioUnidad;
     }
 
-
-    public int getId() {
+    public UUID getId() {
         return this.id;
     }
 
@@ -36,15 +37,15 @@ public class Ingrediente {
         return this.PrecioUnidad;
     }
 
-
     @Override
     public String toString() {
-        return "{" + " id='" + id + "'" + ", nombre='" + nombre + "'" + ", descripcion='" + descripcion + "'"
-                + ", cantidad='" + cantidad + "'" + ", PrecioUnidad='" + PrecioUnidad + "'" + "}";
+        return "\nIngrediente: {" + "'" + "nombre='" + nombre + "'" + ", descripcion='" + descripcion + "'" + ", cantidad='" + cantidad
+                + "'" + ", PrecioUnidad='" + PrecioUnidad + "'" + "}";
     }
 
-    public void indicarCantidad(float cantidad) {
+    public Ingrediente indicarCantidad(float cantidad) {
         this.cantidad = cantidad;
+        return this;
     }
 
 }

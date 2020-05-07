@@ -1,22 +1,23 @@
-package test;
+package training;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Receta {
 
-    private int id;
+    private UUID id;
     private String nombre;
     private String pais;
-    protected ArrayList<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
+    protected ArrayList<Ingrediente> ingredientes;
 
-    public Receta(int id, String nombre, String pais, ArrayList<Ingrediente> ingredientes) {
-        this.id = id;
+    public Receta(String nombre, String pais, ArrayList<Ingrediente> ingredientes) {
+        this.id = UUID.randomUUID();
         this.nombre = nombre;
         this.pais = pais;
         this.ingredientes = ingredientes;
     }
 
-    public int getId() {
+    public UUID getId() {
         return this.id;
     }
 
@@ -34,7 +35,7 @@ public class Receta {
 
     @Override
     public String toString() {
-        return "{" + " id='" + id + "'" + ", nombre='" + nombre + "'" + ", pais='" + pais + "'" + ", ingredientes='"
+        return "Receta: {" + "'" + "nombre='" + nombre + "'" + ", pais='" + pais + "'" + ", ingredientes='"
                 + ingredientes + "'" + "}";
     }
 
@@ -53,7 +54,7 @@ public class Receta {
 
     }
 
-    public void quitarIngrediente(int id) {
+    public void quitarIngrediente(UUID id) {
         for (Ingrediente ingrediente : ingredientes) {
             if (ingrediente.getId() == id) {
                 ingredientes.remove(ingrediente);
