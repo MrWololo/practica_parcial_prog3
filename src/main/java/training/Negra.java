@@ -8,6 +8,6 @@ public class Negra extends TipoCerveza {
 
     @Override
     public String toString() {
-        return "Negra: " + super.toString();
+        return "\n\nNegra: " + super.toString();
     }
 }

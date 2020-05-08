@@ -8,7 +8,7 @@ public class Rubia extends TipoCerveza {
 
     @Override
     public String toString() {
-        return "Rubia: " + super.toString();
+        return "\n\nRubia: " + super.toString();
     }
 
 }

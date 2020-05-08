@@ -62,6 +62,17 @@ public class App {
                 System.out.println("\nPresione una tecla para continuar...");
                 scan.nextLine();
 
+                ////////////////////////////////////////////////////////////////////////
+
+                ArrayList<Cerveza> cervezas = new ArrayList<>();
+                Collections.addAll(cervezas, rubia, roja, negra);
+                Fabrica fabrica = new Fabrica("Antares", "Porahi 2042", cervezas);
+
+                System.out.println(fabrica.toString());
+
+                System.out.println("\nPresione una tecla para continuar...");
+                scan.nextLine();
+
                 scan.close();
         }
 }

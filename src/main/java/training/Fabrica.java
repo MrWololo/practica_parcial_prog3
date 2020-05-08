@@ -5,19 +5,19 @@ import java.util.UUID;
 
 public class Fabrica {
 
-    private int id;
+    private UUID id;
     private String nombre;
     private String direccion;
     private ArrayList<Cerveza> cervezas = new ArrayList<Cerveza>();
 
-    public Fabrica(int id, String nombre, String direccion, ArrayList<Cerveza> cervezas) {
-        this.id = id;
+    public Fabrica(String nombre, String direccion, ArrayList<Cerveza> cervezas) {
+        this.id = UUID.randomUUID();
         this.nombre = nombre;
         this.direccion = direccion;
         this.cervezas = cervezas;
     }
 
-    public int getId() {
+    public UUID getId() {
         return this.id;
     }
 
@@ -66,7 +66,7 @@ public class Fabrica {
 
     @Override
     public String toString() {
-        return "Fabrica: {" + "'" + "nombre='" + getNombre() + "'" + ", direccion='" + getDireccion() + "'"
+        return "\nFabrica: {" + "'" + "nombre='" + getNombre() + "'" + ", direccion='" + getDireccion() + "'"
                 + ", cervezas='" + getCervezas().toString() + "'" + "}";
     }
 

@@ -35,7 +35,7 @@ public class Receta {
 
     @Override
     public String toString() {
-        return "Receta: {" + "'" + "nombre='" + nombre + "'" + ", pais='" + pais + "'" + ", ingredientes='"
+        return "\nReceta: {" + "'" + "nombre='" + nombre + "'" + ", pais='" + pais + "'" + ", ingredientes='"
                 + ingredientes + "'" + "}";
     }
 

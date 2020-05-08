@@ -28,7 +28,7 @@ public abstract class TipoCerveza extends Cerveza {
 
     @Override
     public String toString() {
-        return "TipoCerveza: {" + super.toString() + " gluten='" + isGluten() + "'" + ", receta='" + getReceta() + "'"
+        return "\nTipoCerveza: {" + super.toString() + " gluten='" + isGluten() + "'" + ", receta='" + getReceta() + "'"
                 + ", porcentajeComplejidad='" + getPorcentajeComplejidad() + "'" + "costo fabricacion: "
                 + calcularCostoFabricacion() + "}";
     }

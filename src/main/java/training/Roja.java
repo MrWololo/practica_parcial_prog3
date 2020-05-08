@@ -9,7 +9,7 @@ public class Roja extends TipoCerveza {
 
     @Override
     public String toString() {
-        return "Roja: " + super.toString();
+        return "\n\nRoja: " + super.toString();
     }
 
 }
